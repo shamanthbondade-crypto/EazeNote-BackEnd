@@ -1,24 +1,20 @@
-# EazeNote Backend – Python dependencies
-# Install: pip install -r requirements.txt
+# EazeNote Backend – Memory-Optimised Dependencies
+# No torch, no sentence-transformers, no heavy ML libs.
+# Stays well under Render free tier 512 MB limit.
 
 # Web framework
 fastapi==0.115.5
 uvicorn[standard]==0.32.1
 
-# RAG & Vector DB
+# Vector DB (pure Python + C extensions, ~50 MB)
 chromadb==0.5.23
-sentence-transformers==3.3.1
 
-# PDF parsing
+# PDF parsing (no ML, just C bindings)
 pymupdf==1.24.14
 
-# LLM HTTP calls & env config
+# HTTP + env
 requests==2.32.3
 python-dotenv==1.0.1
 
-# Required by sentence-transformers / torch (CPU-only for Render free tier)
-torch==2.5.1+cpu
---extra-index-url https://download.pytorch.org/whl/cpu
-
-# Utilities
+# File uploads (required by FastAPI for multipart/form-data)
 python-multipart==0.0.17
