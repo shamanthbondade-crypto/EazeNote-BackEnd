@@ -53,8 +53,10 @@ app.add_middleware(
     "https://eaze-note-fbwtqifg8-shamanthbondade-1179s-projects.vercel.app"
 ],        # Tighten to your Vercel domain in production
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=3600
 )
 
 
