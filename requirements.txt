@@ -1,0 +1,24 @@
+# EazeNote Backend – Python dependencies
+# Install: pip install -r requirements.txt
+
+# Web framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# RAG & Vector DB
+chromadb==0.5.23
+sentence-transformers==3.3.1
+
+# PDF parsing
+pymupdf==1.24.14
+
+# LLM HTTP calls & env config
+requests==2.32.3
+python-dotenv==1.0.1
+
+# Required by sentence-transformers / torch (CPU-only for Render free tier)
+torch==2.5.1+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Utilities
+python-multipart==0.0.17
