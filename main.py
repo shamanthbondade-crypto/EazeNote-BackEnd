@@ -47,7 +47,11 @@ app = FastAPI(
 # CORS – allow any Vercel frontend (and local dev)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://eazenote.vercel.app"],          # Tighten to your Vercel domain in production
+    allow_origins=[
+    "https://eazenote.vercel.app",
+    "https://eaze-note-main.vercel.app",  # repo-name default
+    "https://eaze-note-fbwtqifg8-shamanthbondade-1179s-projects.vercel.app"
+],        # Tighten to your Vercel domain in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
