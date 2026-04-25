@@ -2,6 +2,9 @@
 EazeNote – RAG Pipeline
 Handles embedding, vector storage (ChromaDB), retrieval, and LLM calls.
 """
+import torch
+# Force PyTorch to use only 1 CPU thread to save massive amounts of RAM
+torch.set_num_threads(1)
 
 import json
 import logging
